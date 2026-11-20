@@ -14,10 +14,10 @@ MAX_ITEMS = 10000
 
 
 def main():
-  request = urllib.request.Request(
-    SOURCE,
-    headers={"User-Agent": "Mozilla/5.0"}
-)
+    request = urllib.request.Request(
+        SOURCE,
+        headers={"User-Agent": "Mozilla/5.0"}
+    )
     with urllib.request.urlopen(request, timeout=90) as response:
         data = response.read(5_000_001)
     if len(data) > 5_000_000:
